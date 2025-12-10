@@ -1,0 +1,31 @@
+[user]
+	email = samuel.john.codes@gmail.com
+	name = Samuel John
+	password = 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
+[credential]
+	helper = cache
+[init]
+	defaultBranch = main
+
+[url "git@github.com:SamJohn04/"]
+    insteadOf = "sam:"
+
+[status]
+    branch = true
+    showStash = true
+
+[diff]
+    interHunkContext = 10
+
+[push]
+    autoSetupRemote = true
+    default = current
+
+[pull]
+    default = current
+    rebase = true
+
+[rebase]
+    autoStash = true
+    missingCommitsCheck = warn
+
