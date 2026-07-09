@@ -1,11 +1,12 @@
 [user]
-	email = samuel.john.codes@gmail.com
-	name = Samuel John
-	password = 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
+    email = samuel.john.codes@gmail.com
+    name = Samuel John
+
 [credential]
-	helper = cache
+    helper = cache
+
 [init]
-	defaultBranch = main
+    defaultBranch = main
 
 [url "git@github.com:SamJohn04/"]
     insteadOf = "sam:"
