@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+doInternet() {
+  local wofiSelected=$(echo -n -e "󰈹 Firefox\n󰖟 LibreWolf" |
+    wofi -d -i -p "Search: Web Browser" --width=300 --height=141)
+
+  if [[ $wofiSelected == "󰈹 Firefox" ]]; then
+    firefox &
+  elif [[ $wofiSelected == "󰖟 LibreWolf" ]]; then
+    librewolf &
+  fi
+}
+
+doMusic() {
+  local wofiSelected=$(echo -n -e " Spotify\n󰎆 MusikCube" |
+    wofi -d -i -p "Search: Music" --width=300 --height=141)
+
+  if [[ $wofiSelected == " Spotify" ]]; then
+    spotify &
+  elif [[ $wofiSelected == "󰎆 MusikCube" ]]; then
+    kitty "musikcube" &
+  fi
+}
+
+doFileManager() {
+  local wofiSelected=$(echo -n -e "󰉋 Yazi\n󱢴 Dolphin" |
+    wofi -d -i -p "Search: File Manager" --width=300 --height=141)  
+
+  if [[ $wofiSelected == "󰉋 Yazi" ]]; then
+    kitty "yazi" &
+  elif [[ $wofiSelected == "󱢴 Dolphin" ]]; then
+    dolphin &
+  fi
+}
+
+wofiSelected=$(echo -n -e " Terminal\n󰖟 Internet\n󰝚 Music\n󰉋 File Manager\n󱎓 Gaming" |
+  wofi -d -i -p "Search" --width=300 --height=251)
+
+case $wofiSelected in
+  " Terminal")
+    kitty
+    ;;
+  "󰖟 Internet")
+    doInternet
+    ;;
+  "󰝚 Music")
+    doMusic
+    ;;
+  "󰉋 File Manager")
+    doFileManager
+    ;;
+  "󱎓 Gaming")
+    steam &
+    ;;
+esac

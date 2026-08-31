@@ -1,0 +1,34 @@
+#window {
+    background-color: rgba(30, 30, 46, 0.8);
+    border: 1px solid rgb(108, 112, 134);
+    font-size: 1.2rem;
+    font-family: 'Iosevka Nerd Font', 'JetBrainsMono Nerd Font', 'Adwaita Mono', monospace;
+}
+
+#input {
+    background-color: rgba(30, 30, 46, 0.8);
+    color: rgba(205, 214, 214, 1);
+    border: 1px solid rgb(108, 112, 134);
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+}
+
+#scroll {
+    margin-top: 3px;
+    margin-bottom: 6px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#entry {
+    color: rgba(205, 214, 214, 1);
+    padding: 0.6rem 1rem;
+}
+
+#entry:selected {
+    background-color: rgb(203, 166, 247);
+    outline: none;
+}
+#text:selected {
+    color: rgb(30, 46, 46);
+}

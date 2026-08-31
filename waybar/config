@@ -1,0 +1,127 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "width": 1580,
+  "spacing": 0,
+ 
+  "margin": "10,10,0,10",
+ 
+  "modules-left": [
+    "hyprland/workspaces",
+    "clock"
+  ],
+  "modules-center": [
+    "custom/eyecare"
+  ],
+  "modules-right": [
+    "tray",
+    "memory",
+    "network",
+    "wireplumber",
+    "battery",
+    "custom/power"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": "󱓻",
+      "urgent": "󱓻"
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+    }
+  },
+
+  "custom/eyecare": {
+    "exec": "~/.config/scripts/eyecare",
+    "interval": 1200,
+    "return-type": "json",
+    "signal": 20,
+    "on-click": "touch /tmp/hypr_break_timer_start",
+  },
+
+  "memory": {
+    "interval": 5,
+    "format": "󰍛 {}%",
+    "max-length": 10
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "clock": {
+    "tooltip-format": "{calendar}",
+    "format-alt": "  {:%a, %d %b %Y}",
+    "format": "  {:%I:%M %p}"
+  },
+  "network": {
+    "format-wifi" : "{icon}",
+    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+    "format-ethernet": "󰀂",
+    "format-disconnected" : "󰖪",
+    "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "~/.config/scripts/wifi/wifi &",
+    "on-click-right": "~/.config/scripts/wifi/new &",
+    "interval": 5,
+    "nospacing": 1,
+  },
+  "wireplumber": {
+    "format": "{icon}",
+    "format-bluetooth": "󰂰",
+    "nospacing": 1,
+    "tooltip-format": "{volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "headphone": "",
+      "default": ["󰖀 ","󰕾 "," "]
+    },
+    "on-click": "pavucontrol",
+    "scroll-step": 1
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": {
+      "charging": [
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ],
+      "default": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ]
+    },
+    "format-full": "Charged ",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "tooltip": false
+  },
+  "custom/power": {
+    "format": "󰤆",
+    "tooltip": false,
+    "on-click": "~/.config/scripts/power/menu &"
+  }
+}

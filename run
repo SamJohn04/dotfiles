@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+read -p "Link tmux? (y|N) " option
+if [[ $option == "y" ]]; then
+  ln "./tmux/tmux.conf" "$HOME/.tmux.conf"
+  echo "moved tmux"
+fi
+
+read -p "Link git? (y|N) " option
+if [[ $option == "y" ]]; then
+  ln "./git/config" "$HOME/.config/git/config"
+  echo "moved tmux"
+fi
+
+read -p "Move hypr? (y|N) " option
+if [[ $option == "y" ]]; then
+  rm -rf "$HOME/.config/hypr"
+  cp -r "./hypr" "$HOME/.config/hypr"
+  echo "moved hypr"
+fi
+
+read -p "Move dunst? (y|N) " option
+if [[ $option == "y" ]]; then
+  rm -rf "$HOME/.config/dunst"
+  cp -r "./dunst/" "$HOME/.config/dunst"
+  echo "moved dunst"
+fi
+
+read -p "Move scripts? (y|N) " option
+if [[ $option == "y" ]]; then
+  rm -rf "$HOME/.config/scripts"
+  cp -r "./scripts/" "$HOME/.config/scripts"
+  echo "moved scripts"
+fi
+
+read -p "Move waybar? (y|N) " option
+if [[ $option == "y" ]]; then
+  rm -rf "$HOME/.config/waybar"
+  cp -r "./waybar/" "$HOME/.config/waybar"
+  echo "moved waybar"
+fi
+
+read -p "Move wofi? (y|N) " option
+if [[ $option == "y" ]]; then
+  rm -rf "$HOME/.config/wofi"
+  cp -r "./wofi/" "$HOME/.config/wofi"
+  echo "moved wofi"
+fi
