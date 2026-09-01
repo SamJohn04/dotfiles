@@ -8,8 +8,9 @@ fi
 
 read -p "Link git? (y|N) " option
 if [[ $option == "y" ]]; then
+  mkdir -p "$HOME/.config/git"
   ln "./git/config" "$HOME/.config/git/config"
-  echo "moved tmux"
+  echo "moved git"
 fi
 
 read -p "Move hypr? (y|N) " option
